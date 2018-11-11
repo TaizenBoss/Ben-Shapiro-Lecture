@@ -27,7 +27,7 @@ public class chibakuTensei {
 	
 	for(int i = 0; i < monster.length; i++) {
 		System.out.println(monster[i] + " attacks with " + ability[i]
-				+ " has " + coins[i] + " gold coins");
+				+ " and has " + coins[i] + " gold coins");
 		}
 	System.out.println();
 	// randomly assigns hp

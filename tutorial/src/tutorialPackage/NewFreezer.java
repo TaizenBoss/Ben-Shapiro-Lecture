@@ -22,6 +22,9 @@ public class NewFreezer {
 		System.out.println("Hello shopper, would you like to participate in the secret slave auction?\nPress 1 to continue.\nPress 2 to exit.");
 		int stay = scanNums.nextInt();				
 		
+		if(stay == 1) {
+			
+		
 		System.out.print("What is your name, shopper?");// prompting user
 		
 		String name = scanWords.nextLine();// input and store name
@@ -70,7 +73,7 @@ public class NewFreezer {
 		 	}
 		}
 	
-			
+		}	
 		
 		
 				
@@ -90,8 +93,8 @@ public class NewFreezer {
 				System.out.print("Ok. Maybe next time");
 			}
 */
-		}
-		}
+		}//end main
+	}//end class
 
 	
 

@@ -40,9 +40,7 @@ public class encrypto {
 		return encrypted;
 	}//end decrypt
 	
-	public static String messageReturner() {
-		
-	}
+	
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -53,20 +51,11 @@ public class encrypto {
 		System.out.println("Ok! Now please enter in your desired shift value here: ");
 	    int key = scanNums.nextInt();
 		System.out.println(encrypt(message, key));
-		System.out.println(decrypt(message));
+		System.out.println(decrypt(encrypt(message,key), key));
 		
 		
-		String plainText = "Chibaku tenzei";
-		int shiftValue = 100;
-		char x = ' ';
-		String encrypted = "";
-		for(int i = 0; i < plainText.length(); i++) {
-		 if(plainText.charAt(i) + shiftValue > 122) {
-			x = (char)((plainText.charAt(i)%122)+96);
-			encrypted += x;
-			System.out.println(encrypted);}
-		}
-	}
+		
+	
 	}// end main
 
 }//end class
