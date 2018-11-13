@@ -42,7 +42,27 @@ public class tickityTackity {
 		
 		return true;
 }//end winStraight
-	
+	public static boolean winDiagonal(char[][] board, char token) {
+		for(int row = 0; row <board.length; row++) {
+			for(int col = 0; col < board[row].length; col++){
+				if(board[0][0] == token & board[1][1] == token & board[2][2] == token) {
+					System.out.println("Player 1 wins");
+					return true;
+				}
+					
+				
+					 else if(board[2][0] == token & board[1][1] == token & board[0][2] == token) {
+							System.out.println("Player 1 wins");
+							return true;
+					 }
+					 else {
+						 return false;
+					 }
+				
+			}
+		}//end for
+		return true;
+	}//end winDiagonal
 	
 	public static char changeBoard(int tRow, int tColumn, int player) {
 		if(player == 1) {
@@ -90,6 +110,8 @@ public class tickityTackity {
 					turns++;
 					winStraight(gameboard, 'X');
 					winStraight(gameboard, 'O');
+					winDiagonal(gameboard,'X');
+					winDiagonal(gameboard, 'O');
 				}// end if player == 1
 				if(player == 2) {
 					System.out.println("\n\nPlayer O, please enter in the row you'd like to play on:");
@@ -102,6 +124,8 @@ public class tickityTackity {
 					turns++;
 					winStraight(gameboard, 'X');
 					winStraight(gameboard, 'O');
+					winDiagonal(gameboard,'X');
+					winDiagonal(gameboard, 'O');
 				}//end while win conditions have not been met
 		}//end while turns != gameboard.length
 	}		
