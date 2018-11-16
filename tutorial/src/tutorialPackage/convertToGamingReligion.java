@@ -1,5 +1,4 @@
 package tutorialPackage;
-import java.util.Random;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class convertToGamingReligion {
@@ -7,8 +6,8 @@ public class convertToGamingReligion {
 static Scanner scanint = new Scanner(System.in);
 static Scanner scanstr = new Scanner(System.in);
 static int UserHP= 50;
-ArrayList Backpack = new ArrayList<>(); 
-static int choice = scanint.nextInt();
+static ArrayList<String> Backpack = new ArrayList<>(); 
+static int choice;
 
 public static void window1() {
 	//public staticines window01 with no arguments
@@ -16,7 +15,7 @@ public static void window1() {
 	    //System.out.printlns You die from the fall. Bad choice
 	    //thread.sleep(3000);
 	    ////thread.sleep(5000)s the program for 3 seconds
-	    main();
+	   yourRoom();
 	    //calls YourRoom so it goes back to the beginning
 }//window1
 
@@ -52,6 +51,7 @@ public static void door1() {
 	    door1();
 	    // calls door1()
 	  }
+}
 	  
 public static void basement1() {
 	// defines basement1 with no arguments
@@ -75,11 +75,13 @@ public static void basement1() {
 	  choice = scanint.nextInt();
 	  // makes the choice variable and System.out.printlns "Say yes to take clothes. Say no to leave them"
 	  if(choice == 1 && !Backpack.contains( "Clothes")) {
-	  // if the user choice equals to Yes and clothes are not in the variable Backpack continue  
+	  // if the user choice equals to Yes and clothes are not in the variable Backpack continue 
+	  }
 	    if(Backpack.contains("Clothes")) {
 	    // if Clothes are in Backpack continue  
 	      System.out.println ("You already have clothes. Why would you need more?");
 	      // System.out.printlns "You already have clothes. Why would you need more?"
+	    }
 	    if(!Backpack.contains("Clothes")) {
 	    // if Clothes are not in Backpack continue
 	      Backpack.add("Clothes");
@@ -98,7 +100,7 @@ public static void basement1() {
 	    ////thread.sleep(5000)s the program for 3 seconds
 	    basement1();
 	    //calls the function basement1() to go to it
-	  
+	  }
 	  System.out.println ("You suddenly remember your dad had a safe with guns.");
 	  //System.out.printlns You suddenly remember your dad had a safe with guns.
 	  //thread.sleep(3000);
@@ -125,12 +127,14 @@ public static void basement1() {
 	    // System.out.printlns "Might as well go since we're down here."
 	    gunroom();
 	    // calls gunroom() to go there
+	  }
 	  else if(choice == 2){
 	  // else if the choice is equal to 2 continue  
 	    System.out.println ("I'm not going to take that chance, it might be too loud.");
 	    // System.out.printlns "I'm not going to take that chance, it might be too loud."
 	    kitchen1();
 	    //calls kitchen1() to go to that function
+	  }
 	  else {
 	  // if the choice is anything other than 1 or 2 continue  
 	    System.out.println ("Invalid choice, maybe you didn't understand?");
@@ -140,6 +144,8 @@ public static void basement1() {
 	    basement1();
 	    // calls the basement1() function to go there
 	}  
+	  }
+	  
 	public static void kitchen1() {
 	// public staticines Kitchen1 with no arguments
 	  System.out.println ("You return to the kitchen.");
@@ -233,9 +239,9 @@ public static void basement1() {
 	      // //thread.sleep(5000)s the program for 3 seconds
 	      System.out.println ("But sadly I think your math is a bit off");
 	      // System.out.printlns "But sadly I think your math is a bit off"
-	    }
 	      kitchen1();
 	      // call the function kitchen1() to go back to it
+	    }
 	    else if(choice == 3) {
 	    // else if the choice is equal to 3 continue
 	      System.out.println ("Calculating...");
@@ -273,19 +279,9 @@ public static void basement1() {
 	      // //thread.sleep(5000)s the program for 2 seconds
 	      kitchen1();
 	      // calls the function kitchen1() to go back to it
-	  else {
-	  // if anything else is typed other than 1 or 2 continue
-	    System.out.println("I don't think you understood the question.");
-	    // System.out.printlns "I dont think you understood the question."
-	    //thread.sleep(3000);
-	    // //thread.sleep(5000)s the program for 3 seconds
-	    System.out.println ("Try again");
-	    // System.out.printlns "Try again"
-	    //thread.sleep(2000);
-	    ////thread.sleep(5000)s the program for 2 seconds
-	    kitchen1();
-	    // calls the function kitchen1() to go back to it
+	    }
 	}
+
 	public static void wakeup() {
 	// public staticines the fuction wakeup()
 	  System.out.println ("Yawwwwn!");
@@ -321,7 +317,14 @@ public static void basement1() {
 	      journeycontinue();
 	      // calls the function journeycontinue to continue to it
 	     }
-	    
+	    else if(choice == 2) {
+	  	  // else if the user choice is equal to 2 continue
+	  	    System.out.println("Well you have no choice we're continuing this journey!");
+	  	    // System.out.printlns "Well you have no choice we're continuing this journey!"
+	  	    //thread.sleep(2000);
+	  	    // //thread.sleep(5000)s the program for 2 seconds
+	  	    journeycontinue();
+	  	  }
 	    else if(choice== 2) {
 	    // else if the choice is equal to 2 continue
 	      System.out.println("You stopped the journey.");
@@ -339,28 +342,7 @@ public static void basement1() {
 	      journeycontinue();
 	      // calls the function journeycontinue() to continue to it
 	    }
-	    
-	    else {
-	    // if anything other than 1 or 2 is entered continue
-	      System.out.println ("I don't think that you understood the question");
-	      // System.out.printlns "I don't think that you understood the question"
-	      //thread.sleep(3000);
-	      // //thread.sleep(5000)s the program for 3 seconds
-	      System.out.println ("Try again");
-	      // System.out.printlns "Try again"
-	      //thread.sleep(2000);
-	      // //thread.sleep(5000)s the program for 2 seconds
-	      wakeup();
-	      // calls the function wake up to go back to it
-	    }
-	  else if(choice == 2) {
-	  // else if the user choice is equal to 2 continue
-	    System.out.println("Well you have no choice we're continuing this journey!");
-	    // System.out.printlns "Well you have no choice we're continuing this journey!"
-	    //thread.sleep(2000);
-	    // //thread.sleep(5000)s the program for 2 seconds
-	    journeycontinue();
-	  }
+
 	  else {
 	  // if the user choice is anything other than 1 or 2 continue
 	    System.out.println ("I don't think that you understood the question");
@@ -374,6 +356,7 @@ public static void basement1() {
 	    wakeup();
 	    // calls the function wakeup() to continue to it
 	}
+}
 	public static void journeycontinue() {
 	// public staticines journeycontinue()
 	  System.out.println("Well we have baricaded the windows and doors already");
@@ -650,7 +633,7 @@ public static void basement1() {
 	    System.out.println ("You're going to have to make a choice whether to open the door or not.");
 	    // System.out.printlns "You're going to have to make a choice whether to open the door or not."
 	    
-	    System,.out.println("Enter 1 to open Door, Enter 2 to keep it closed.");
+	    System.out.println("Enter 1 to open Door, Enter 2 to keep it closed.");
 	    choice= scanint.nextInt();
 	    // creates variable choice and System.out.printlns "Enter 1 to open Door, Enter 2 to keep it closed."
 	  }
@@ -694,19 +677,7 @@ public static void basement1() {
 	        Bustdoor();
 	        // calls the function Bustdoor() to go to it
 	      }
-	      else {
-	      // if the user choice is anything other than 1 or 2 continue
-	        System.out.println ("Invalid choice");
-	        // System.out.printlns "Invalid choice"
-	        //thread.sleep(3000);
-	        // //thread.sleep(5000)s the program for 3 seconds
-	        System.out.println ("Try again");
-	        // pritns "Try again"
-	        //thread.sleep(2000);
-	        // //thread.sleep(5000)s the program for 2 seconds
-	        knockknock();
-	        // calls the function knock knock to go to it.
-	      }
+	     
 	    else if(choice == 2) {
 	    // else if the choice is equal to 2 continue
 	      System.out.println ("You patiently wait for what happens next.");
@@ -803,11 +774,11 @@ public static void basement1() {
 	  System.out.println("Enter 1 for Pistol, Enter 2 for Shotgun");
 	  choice = scanint.nextInt();
 	  // creates the variable choice and System.out.printlns "Enter 1 for Pistol, Enter 2 for Shotgun"
-	  if(choice == 1 && !Backpack.contain("Pistol")){
+	  if(choice == 1 && !Backpack.contains("Pistol")){
 	  // if the user choice is equal to 1 and Pistol is not in Backpack continue
-	    if(Backpack.contain("Pistol")){
+	    if(Backpack.contains("Pistol")){
 	    // if "Pistol" is already in the variable Backpakc continue
-	      System.out.println ("You already have a Pistol you goof!");
+	      System.out.println ("You already have a Pistol, you goof!");
 	      // System.out.printlns "You already have a Pistol you goof!"
 	    }
 	    if(!Backpack.contains("Pistol")) {
@@ -819,16 +790,15 @@ public static void basement1() {
 	    }
 	  else if(choice == 2 && !Backpack.contains("Shotgun")) {
 	  // else if the user choice is equal to 2 and Shotgun is not in Backpack continue
-	    if(Backpack.contain("Shotgun")) {
+		  if(Backpack.contains("Shotgun")) {
 	    // if the "Shotgun" string is in Backpack continue
-	      System.out.println ("You already have a Pistol you goof!");
+			  System.out.println ("You already have a Shotgun, you goof!");
 	      // System.out.printlns "You already have a Pistol you goof!"
 	    }
-	    if(!Backpack.contain("Shotgun")){
-	    // if "Shotgun" string is not in Backpack continue
-	      System.out.println ("Good choice, Easy kills with this bad boy!");
+		  if(!Backpack.contains("Shotgun")) {	    // if "Shotgun" string is not in Backpack continue
+			  System.out.println ("Good choice, Easy kills with this bad boy!");
 	      // System.out.printlns "Good choice, Easy kills with this bad boy!"
-	      Backpack.add("Shotgun");
+			  Backpack.add("Shotgun");
 	      // Adds the string "Shotgun" to the variable Backpack
 	    }
 	  else {
@@ -885,6 +855,7 @@ public static void basement1() {
 	}
 	  }
 }
+
 	public static void Fightnumber1() {
 	//public staticines Fightnumber1 with no parameters
 	  System.out.println ("Intense music incoming!");
@@ -944,7 +915,7 @@ public static void basement1() {
 	    // System.out.printlns "Good Luck!"
 	    //thread.sleep(2000);
 	    // //thread.sleep(5000)s the program for 2 seconds
-	    main();
+	    yourRoom();
 	    // calls the function YourRoom() to go to it
 	  	}
 	  else if(choice == 2){
@@ -973,7 +944,7 @@ public static void basement1() {
 	
 
 
-	public static void main(String[] args) {
+	public static void yourRoom() {
 		// creates YourRoom with no arguments  
 		System.out.println ("This game will be based on your choice.");
 		// System.out.printlns "This game will be based on your choice."
@@ -1012,12 +983,13 @@ public static void basement1() {
 		// System.out.printlns "You know you have to make quick decisions."
 		//thread.sleep(3000);
 		////thread.sleep(5000)s the program for 3 seconds
-		System.out.println ("Your options are\n" + "1: Jump out the Window(Potential Danger)\n" + "2: Walk out of the Room(Potential Danger\n)");
+		System.out.println ("Your options are\n" + "1: Jump out the Window(Potential Danger)\n" + "2: Walk out of the Room(Potential Danger)\n");
 		// System.out.printlns "Your options are
 		// 1: Jump out the Window(Potential Danger)
 		// 2: Walk out of the Room(Potential Danger)
 		System.out.println("Enter a Number for your Choice, Remember Both have potential Danger");
 		// makes the variable choice and System.out.printlns "Enter a number for your Choice, Remember both have potential Danger"
+		choice = scanint.nextInt();
 		if(choice == 1) {
 			// if the choice == 1 continues  
 			window1();
@@ -1038,6 +1010,9 @@ public static void basement1() {
 // calls the function YourRoom() which untimately starts the whole game
 
 
-	}//end main
+	}//end yourRoom
 
+	public static void main(String[] args) {
+		yourRoom();
+	}//end main
 }//end class
