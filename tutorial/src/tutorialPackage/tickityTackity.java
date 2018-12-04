@@ -95,10 +95,10 @@ public class tickityTackity {
 		
 		System.out.println("Hello users. Let's begin our Tic Tac Toe game. You will need 2 players to play");
 		int player = 1;
-		int turns = 0;
+		int turns = gameboard.length * gameboard.length;
 		
 		while(turns != gameboard.length) {
-			while(winStraight(gameboard, 'X') != true & winStraight(gameboard, 'O') != true) {
+			while(winStraight(gameboard, 'X') != true && winStraight(gameboard, 'O') != true && winDiagonal(gameboard, 'X') != true && winDiagonal(gameboard, 'O') != true) {
 				if(player == 1) {
 					System.out.println("\n\nPlayer X, please enter in the row you'd like to play on:");
 					int tokenRow = scanNums.nextInt();

@@ -1,7 +1,7 @@
 package tutorialPackage;
 
 public class Meteorite {
-	String[] powers = {"tail whip", "splash", "fire wheel", "Mangekyo Sharingan"};
+	String[] powers = {"Tenseigan", "Byakugan", "Rinnegan", "Mangekyo Sharingan", "Sharingan"};
 	
 	public Meteorite() {}
 	
