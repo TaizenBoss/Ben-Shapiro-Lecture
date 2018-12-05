@@ -4,13 +4,23 @@ public class TestInvoice {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-			Product laser = new Product("laser", 2000);
-			System.out.print(laser.toString());
-			
-			Customer DrDoofenshmirtz = new Customer("Doofenshmirtz Evil Inc.", 
-					"Dr.Doofenshmirtz", 10000);
-			DrDoofenshmirtz.addFunds(1000);
-			
+		//invoice run 1
+				Customer c = new Customer("island", "Dr evil", 1230.0);
+				Invoice in = new Invoice(c);
+				in.addToOrder(new Product("flame Thower",123.80), 3);
+				in.addToOrder(new Product("sharks", 105.2),2);
+				in.addToOrder(new Product("lasers",50.5),20);
+				
+				runInvoice(c,in); //runs invoice
+				
+				//invoice run 2
+				
+				//invoice run 3
+				
+				//invoice run 4
+				
+			}//end main
+
 			
 	}//end main
 

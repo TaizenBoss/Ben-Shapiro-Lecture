@@ -16,6 +16,7 @@ public class Product {
 	public double getPrice() {
 		return price;
 	}
+	
 	public String toString() {
 		return "Price: " + price + "\nName: " + name;
 	}

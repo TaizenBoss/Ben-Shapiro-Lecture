@@ -14,6 +14,10 @@ public class LineItem {
 		return "Product: " + theProduct 
 				+ "\nQuantity: " +qty;
 				}
-	
-	
+	public Product getProduct() {
+		return theProduct;
+	}
+	public int getQty() {
+		return qty;
+	}
 }//end class
