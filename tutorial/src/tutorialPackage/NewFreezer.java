@@ -1,4 +1,4 @@
-package tutorialPackage;
+`package tutorialPackage;
 import java.util.Scanner;
 import java.util.Random;
 public class NewFreezer {

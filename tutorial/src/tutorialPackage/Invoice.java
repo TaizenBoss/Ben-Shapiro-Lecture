@@ -31,14 +31,13 @@ public class Invoice {
 	
 	public void printInvoice() {
 		for(int i =  0; i < lineItem.size(); i++) {
-			System.out.println("Line Item " + (i +1) + "[qty: " + lineItem.get(i).getQty()
-			+ ", Product Name: " + lineItem.get(i).getProduct() + ", Price: " 
-					+ lineItem.get(i).getProduct().getPrice() +"]] Total: " 
-			+ lineItem.get(i).getQty() * lineItem.get(i).getProduct().getPrice());
+			System.out.print("Line Item " + (i +1) + "[qty: " + lineItem.get(i).getQty());
+			System.out.printf(", Product Name: " + lineItem.get(i).getProduct() + ", Price: $%.2f" , lineItem.get(i).getProduct().getPrice());
+			System.out.printf("]] Total: %.2f\n" , lineItem.get(i).getQty() * lineItem.get(i).getProduct().getPrice());
 			}
-			System.out.println("Total DUE: " + amountDue());
+			System.out.printf("Total DUE: $%.2f\n" , amountDue());
 			if(canAfford(this.customer) == true) {
-				System.out.println("******Purchase APPROVED!!!!!!!!!");
+				System.out.println("****** " + customer.getName() +" Purchase APPROVED!!!!!!!!!\n");
 				
 			}
 		
