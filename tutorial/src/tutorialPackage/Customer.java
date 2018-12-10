@@ -1,7 +1,6 @@
 package tutorialPackage;
 
 public class Customer {
-
 	private String secretLairLocation;
 	private String Name;
 	private double evilFunds;

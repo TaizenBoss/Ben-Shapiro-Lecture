@@ -7,7 +7,8 @@ public class TestInvoice {
 		if(c.getFunds()- i.amountDue() < 0) {
 			System.out.println("Evil villian credit union to the rescue!!");	
 			c.addFunds(i.amountDue() - c.getFunds());
-			System.out.println("New funds total: " + c.getFunds() +"\n");
+			System.out.printf("New funds total: $%.2f" ,  c.getFunds()); 
+			System.out.print("\n\n");
 		}
 		
 	

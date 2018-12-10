@@ -32,7 +32,8 @@ public class Invoice {
 	public void printInvoice() {
 		for(int i =  0; i < lineItem.size(); i++) {
 			System.out.print("Line Item " + (i +1) + "[qty: " + lineItem.get(i).getQty());
-			System.out.printf(", Product Name: " + lineItem.get(i).getProduct() + ", Price: $%.2f" , lineItem.get(i).getProduct().getPrice());
+			System.out.print(", Product Name: " + lineItem.get(i).getProduct().getName());
+			System.out.printf(", Price: $%.2f" , lineItem.get(i).getProduct().getPrice());
 			System.out.printf("]] Total: %.2f\n" , lineItem.get(i).getQty() * lineItem.get(i).getProduct().getPrice());
 			}
 			System.out.printf("Total DUE: $%.2f\n" , amountDue());

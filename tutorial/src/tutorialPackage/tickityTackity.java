@@ -4,34 +4,34 @@ public class tickityTackity {
 
 	static char[][] gameboard = new char[3][3];
 	
-	public static boolean winStraight(char[][] board, char token) {
+	public static boolean winStraight(char[][] board, char token, int player) {
 		for(int row = 0; row <board.length; row++) {
 			for(int col = 0; col < board[row].length; col++){
 				if(board[0][0] == token & board[0][1] == token & board[0][2] == token) {
-					System.out.println("Player 1 wins");
+					System.out.println("Player " + player + " wins.");
 					return true;
 				}
 					
 				
 					 else if(board[1][0] == token & board[1][1] == token & board[1][2] == token) {
-							System.out.println("Player 1 wins");
+							System.out.println("Player " + player + " wins.");
 							return true;
 					 }
 				
 					 else if(board[2][0] == token & board[2][1] == token & board[2][2] == token) {
-						 System.out.println("Player 1 wins");
+						 System.out.println("Player " + player + " wins.");
 						 return true;
 					 }
 					 else if(board[0][0] == token & board[1][0] == token & board[2][0] == token) {
-						 System.out.println("Player 1 wins");
+						 System.out.println("Player " + player + " wins.");
 							return true;
 					 }
 					 else if(board[0][1] == token & board[1][1] == token & board[2][1] == token) {
-						 System.out.println("Player 1 wins");
+						 System.out.println("Player " + player + " wins.");
 							return true;
 					 }
 					 else if(board[0][2] == token & board[1][2] == token & board[2][2] == token) {
-						 System.out.println("Player 1 wins");
+						 System.out.println("Player " + player + " wins.");
 							return true;
 					 }
 					 else {
@@ -42,17 +42,17 @@ public class tickityTackity {
 		
 		return true;
 }//end winStraight
-	public static boolean winDiagonal(char[][] board, char token) {
+	public static boolean winDiagonal(char[][] board, char token, int player) {
 		for(int row = 0; row <board.length; row++) {
 			for(int col = 0; col < board[row].length; col++){
 				if(board[0][0] == token & board[1][1] == token & board[2][2] == token) {
-					System.out.println("Player 1 wins");
+					System.out.println("Player " + player + " wins.");
 					return true;
 				}
 					
 				
 					 else if(board[2][0] == token & board[1][1] == token & board[0][2] == token) {
-							System.out.println("Player 1 wins");
+							System.out.println("Player " + player + " wins.");
 							return true;
 					 }
 					 else {
@@ -97,8 +97,8 @@ public class tickityTackity {
 		int player = 1;
 		int turns = gameboard.length * gameboard.length;
 		
-		while(turns != gameboard.length) {
-			while(winStraight(gameboard, 'X') != true && winStraight(gameboard, 'O') != true && winDiagonal(gameboard, 'X') != true && winDiagonal(gameboard, 'O') != true) {
+
+			while(turns != 0) {
 				if(player == 1) {
 					System.out.println("\n\nPlayer X, please enter in the row you'd like to play on:");
 					int tokenRow = scanNums.nextInt();
@@ -106,12 +106,14 @@ public class tickityTackity {
 					int tokenCol = scanNums.nextInt();
 					changeBoard(tokenRow, tokenCol, player);
 					drawBoard();
+					turns--;
+					winStraight(gameboard, 'X', player);
+					winDiagonal(gameboard,'X', player);
+					if(winStraight(gameboard, 'X', player) == true || winDiagonal(gameboard,'X', player) == true) {
+						break;
+					}
 					player = 2;
-					turns++;
-					winStraight(gameboard, 'X');
-					winStraight(gameboard, 'O');
-					winDiagonal(gameboard,'X');
-					winDiagonal(gameboard, 'O');
+					
 				}// end if player == 1
 				if(player == 2) {
 					System.out.println("\n\nPlayer O, please enter in the row you'd like to play on:");
@@ -121,14 +123,17 @@ public class tickityTackity {
 					changeBoard(tokenRow, tokenCol, player);
 					drawBoard();
 					player = 1;
-					turns++;
-					winStraight(gameboard, 'X');
-					winStraight(gameboard, 'O');
-					winDiagonal(gameboard,'X');
-					winDiagonal(gameboard, 'O');
-				}//end while win conditions have not been met
+					turns--;
+					winStraight(gameboard, 'O',player);
+					winDiagonal(gameboard, 'O',player);
+					if(winStraight(gameboard, 'O', player) == true || winDiagonal(gameboard,'O', player) == true) {
+						break;
+					}
+					player = 1;
+					
+					}
 		}//end while turns != gameboard.length
-	}		
+
 		
 		
 		
