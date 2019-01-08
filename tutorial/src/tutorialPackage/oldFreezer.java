@@ -43,6 +43,7 @@ static int userGuess;//takes in users guess
 						
 						menuChoice = scanN.nextInt();//congragulates and asks if user wishes to play again, and stores their answer
 						if(menuChoice == 2) {
+							System.out.println("Have a good day, " + name + "!");
 							break;//if they do not wish to play anymore, end the game
 						}
 					}

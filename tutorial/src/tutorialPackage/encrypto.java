@@ -10,13 +10,14 @@ public class encrypto {
 			if(plainText.charAt(i) == ' ') {
 				encrypted+= " ";
 			}
-			else if(plainText.charAt(i) != ' ') {
+			else if(plainText.charAt(i) + shiftValue < 122) {
 				 x = (char)(plainText.charAt(i) + shiftValue);
-				 encrypted += x;
-			}
+				 encrypted += x;}
+				
 			else if(plainText.charAt(i) + shiftValue > 122) {
-				x = (char)((plainText.charAt(i)%122)+96);
-				encrypted += x;
+				  x = (char)(((plainText.charAt(i)+shiftValue)%122)+96);
+					  encrypted += x;
+				
 			}
 		}// end for
 		
@@ -31,9 +32,13 @@ public class encrypto {
 			if(encryptedText.charAt(i) == ' ') {
 				encrypted+= " ";
 				}
-			else if(encryptedText.charAt(i) != ' ') {
+			else if(encryptedText.charAt(i)-shiftValue >= 96) {
 				 x = (char)(encryptedText.charAt(i) - shiftValue);
 				 encrypted += x;
+			}
+			else if(encryptedText.charAt(i)-shiftValue < 96) {
+				x = (char)(122-(96 % (encryptedText.charAt(i) -shiftValue)));
+				encrypted += x;
 			}
 		}// end for
 		

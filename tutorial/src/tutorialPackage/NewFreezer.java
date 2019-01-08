@@ -1,4 +1,4 @@
-`package tutorialPackage;
+package tutorialPackage;
 import java.util.Scanner;
 import java.util.Random;
 public class NewFreezer {
@@ -8,7 +8,7 @@ public class NewFreezer {
 // thanos - 1000$
 
 	
-			
+
 	public static void main(String[] args) {
 		Scanner scanWords = new Scanner(System.in);
 		Scanner scanNums = new Scanner(System.in);

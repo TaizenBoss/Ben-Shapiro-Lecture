@@ -107,8 +107,6 @@ public class tickityTackity {
 					changeBoard(tokenRow, tokenCol, player);
 					drawBoard();
 					turns--;
-					winStraight(gameboard, 'X', player);
-					winDiagonal(gameboard,'X', player);
 					if(winStraight(gameboard, 'X', player) == true || winDiagonal(gameboard,'X', player) == true) {
 						break;
 					}
@@ -130,7 +128,9 @@ public class tickityTackity {
 						break;
 					}
 					player = 1;
-					
+				if(winStraight(gameboard, 'O', player) == true || winDiagonal(gameboard,'O', player) == true || winStraight(gameboard, 'X', player) == true || winDiagonal(gameboard,'X', player)) {
+						break;}
+				
 					}
 		}//end while turns != gameboard.length
 
